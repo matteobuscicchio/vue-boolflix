@@ -35,8 +35,8 @@
 
 					<div class="movie_card" v-for="movie in moviesInfo">
 
-						<h3 class="title">{{movie.title}}</h3>
-						<h3 class="original_title">{{movie.original_title}}</h3>
+						<h3 class="title">{{movie.title}}{{movie.name}}</h3>
+						<h3 class="original_title">{{movie.original_title}}{{movie.original_name}}</h3>
 						<span class="language">{{movie.original_language}}</span>
 						<span class="vote">{{movie.vote_average}}</span>
 					</div>
