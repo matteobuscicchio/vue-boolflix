@@ -20,6 +20,7 @@
 let app = new Vue({
     el: '#app',
     data: {
+
         genre: '',
         movie: 'movie',
         tv: 'tv',
@@ -32,10 +33,8 @@ let app = new Vue({
         movieOrTv: function(){
             let oneOrtwo = document.getElementById('selettore').value;
             if (oneOrtwo == "film" ) {
-                console.log("movie");
                 this.genre = this.movie;
             } else if (oneOrtwo == "tv" ) {
-                console.log("tv");
                 this.genre = this.tv;
             }
         },
@@ -47,7 +46,6 @@ let app = new Vue({
 				this.moviesInfo = data;
                 console.log(this.moviesInfo);
             })
-            console.log(this.genre);
 		},
     },
 
