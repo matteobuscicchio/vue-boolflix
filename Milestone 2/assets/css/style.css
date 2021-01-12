@@ -1,0 +1,97 @@
+/* reset */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/* temporaneo: Body */
+body{
+	background-color: purple;
+}
+
+
+/* utility */
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+/* flex */
+.d_flex {
+	display: flex;
+}
+
+
+/* sezione: RICERCA */
+.search_utility{
+	background-color: white;
+	border-radius: 5px;
+	margin: 10px;
+	/* flex */
+	justify-content: space-evenly;
+	align-items: center;
+}
+.search_utility>i{
+	font-size: larger;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #b1b1b1;
+}
+
+.search_input{
+	font-size: large;
+	padding: 10px;
+	border: white;
+	border-radius: 5px;
+	width: -webkit-fill-available;
+}
+.search_input:focus{
+	outline: none;
+}
+
+.search_button{
+	font-size: large;
+	outline: none;
+	background-color: white;
+	color: #b1b1b1;
+	border-radius: 5px;
+    padding: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/* sezione: FILM */
+.movie_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.movie_card{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 10px 20px;
+    height: 360px;
+    background: darkgray;
+    text-align: center;
+}
+.movie_card h3 {
+    margin: 20px 0;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.movie_card span.language {
+    color: white;
+    font-size: 20px;
+}
+.movie_card span.vote {
+    color: white;
+}
