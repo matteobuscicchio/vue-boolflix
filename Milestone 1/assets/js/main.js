@@ -11,12 +11,26 @@
 // 3. Lingua
 // 4. Voto
 
-// apiKey
-// https://api.themoviedb.org/3/movie/550?api_key=5c002e8033723e03762798df6a4b2e57
-
 let app = new Vue({
     el: '#app',
-    data: {},
+    data: {
+        userResearch: '',
+        moviesInfo: [],
+    },
 
-    methods: {},
+    methods: {
+
+        obtainMovieInfo: function(find){
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=5c002e8033723e03762798df6a4b2e57&language=it&query=${find}`)
+			.then(index =>{
+				this.moviesInfo = index.data.results;
+                console.log(this.moviesInfo);
+            });
+		},
+    },
+
+    mounted(){
+
+		// this.obtainMovieInfo(userResearch);
+	}
 })

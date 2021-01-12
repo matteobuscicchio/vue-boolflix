@@ -60,3 +60,38 @@ body{
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+/* sezione: FILM */
+.movie_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.movie_card{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 10px 20px;
+    height: 360px;
+    background: darkgray;
+    text-align: center;
+}
+.movie_card h3 {
+    margin: 20px 0;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.movie_card span.language {
+    color: white;
+    font-size: 20px;
+}
+.movie_card span.vote {
+    color: white;
+}

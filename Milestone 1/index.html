@@ -26,17 +26,20 @@
 				<div class="search_utility d_flex">
 
 					<i class="fas fa-search"></i>
-					<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" >
+					<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch" v-on:keyup.enter="obtainMovieInfo(userResearch)">
 
 					<button class="search_button">Cerca</button>
 				</div>
 
-				<div class="movie_card">
+				<div class="movie_container container">
 
-					<h3>Titolo</h3>
-					<h3>Titolo Originale</h3>
-					<span>Lingua</span>
-					<span>voto</span>
+					<div class="movie_card" v-for="movie in moviesInfo">
+
+						<h3 class="title">{{movie.title}}</h3>
+						<h3 class="original_title">{{movie.original_title}}</h3>
+						<span class="language">{{movie.original_language}}</span>
+						<span class="vote">{{movie.vote_average}}</span>
+					</div>
 				</div>
 			</div>
 		</div>
