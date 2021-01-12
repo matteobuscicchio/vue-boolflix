@@ -28,7 +28,7 @@
 					<i class="fas fa-search"></i>
 					<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch" v-on:keyup.enter="obtainMovieInfo(userResearch)">
 
-					<button class="search_button">Cerca</button>
+					<button class="search_button" @click="obtainMovieInfo(userResearch)">Cerca</button>
 				</div>
 
 				<div class="movie_container container">
