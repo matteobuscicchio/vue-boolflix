@@ -14,33 +14,51 @@
 // Qui un esempio di chiamata per le serie tv:
 // https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=scrubs
 
+// vote_average
+
 
 let app = new Vue({
     el: '#app',
     data: {
+        genre: '',
+        movie: 'movie',
+        tv: 'tv',
         userResearch: '',
         moviesInfo: [],
     },
 
     methods: {
 
-        obtainMovieInfo: function(find){
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=5c002e8033723e03762798df6a4b2e57&language=it&query=${find}`)
-			.then(indexMovie =>{
-				this.moviesInfo = indexMovie.data.results;
-                console.log(this.moviesInfo);
-            });
+        movieOrTv: function(){
+            let oneOrtwo = document.getElementById('selettore').value;
+            if (oneOrtwo == "film" ) {
+                console.log("movie");
+                this.genre = this.movie;
+            } else if (oneOrtwo == "tv" ) {
+                console.log("tv");
+                this.genre = this.tv;
+            }
+        },
 
-            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=5c002e8033723e03762798df6a4b2e57&language=it&query=${find}`)
-            .then(indexTv =>{
-				this.moviesInfo = indexTv.data.results;
+        obtainMovieInfo: function(type,find){
+            axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=5c002e8033723e03762798df6a4b2e57&language=it&query=${find}`)
+			.then(indexMovie =>{
+                const data = indexMovie.data.results;
+				this.moviesInfo = data;
                 console.log(this.moviesInfo);
-            });
+            })
+            console.log(this.genre);
 		},
+    },
+
+    computed: {
+
+
     },
 
     mounted(){
 
-		// this.obtainMovieInfo(userResearch);
+        // this.obtainMovieInfo(userResearch);
+        this.movieOrTv();
 	}
 })

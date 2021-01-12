@@ -23,7 +23,6 @@ body{
 }
 
 
-/* sezione: RICERCA */
 .search_utility{
 	background-color: white;
 	border-radius: 5px;
@@ -32,11 +31,9 @@ body{
 	justify-content: space-evenly;
 	align-items: center;
 }
-.search_utility>i{
-	font-size: larger;
-	margin-left: 10px;
-	margin-right: 10px;
-	color: #b1b1b1;
+
+#selettore{
+	border: none;
 }
 
 .search_input{
@@ -51,6 +48,7 @@ body{
 }
 
 .search_button{
+	display: inherit;
 	font-size: large;
 	outline: none;
 	background-color: white;
@@ -59,6 +57,10 @@ body{
     padding: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+.search_button>i{
+	padding-right: 5px;
+	color: #b1b1b1;
 }
 
 /* sezione: FILM */

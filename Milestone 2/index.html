@@ -25,10 +25,14 @@
 
 				<div class="search_utility d_flex">
 
-					<i class="fas fa-search"></i>
-					<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch" v-on:keyup.enter="obtainMovieInfo(userResearch)">
+					<select id="selettore" @change="movieOrTv() & obtainMovieInfo(genre,userResearch)">
+						<option value="film">Film</option>
+						<option value="tv">Tv</option>
+					</select>
 
-					<button class="search_button" @click="obtainMovieInfo(userResearch)">Cerca</button>
+					<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch" v-on:keyup.enter="obtainMovieInfo(genre,userResearch)">
+
+					<button class="search_button" @click="obtainMovieInfo(genre,userResearch)"> <i class="fas fa-search"></i> Cerca</button>
 				</div>
 
 				<div class="movie_container container">
