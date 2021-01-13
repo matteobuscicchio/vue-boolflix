@@ -24,6 +24,10 @@ body{
 
 
 /* sezione: RICERCA */
+#selettore{
+	border: none;
+}
+
 form{
 	display: contents;
 }
