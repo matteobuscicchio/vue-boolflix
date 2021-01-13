@@ -27,6 +27,7 @@ body{
 form{
 	display: contents;
 }
+
 .search_utility{
 	background-color: white;
 	border-radius: 5px;
@@ -35,18 +36,11 @@ form{
 	justify-content: space-evenly;
 	align-items: center;
 }
-.search_utility>i{
-	font-size: larger;
-	margin-left: 10px;
-	margin-right: 10px;
-	color: #b1b1b1;
-}
 
 .search_input{
 	font-size: large;
 	padding: 10px;
 	border: white;
-	border-radius: 5px;
 	width: -webkit-fill-available;
 }
 .search_input:focus{
@@ -60,9 +54,15 @@ form{
 	color: #b1b1b1;
 	border-radius: 5px;
     padding: 5px;
-	margin-left: 10px;
 	margin-right: 10px;
-	display: inline;
+	/* flex */
+	align-items: center;
+}
+.search_button>i{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #b1b1b1;
+	font-size: medium;
 }
 
 /* sezione: FILM */
