@@ -49,7 +49,7 @@
 						<h3 class="title">{{genre.title}}{{genre.name}}</h3>
 						<h3 class="original_title">{{genre.original_title}}{{genre.name}}</h3>
 						<span class="language">{{genre.original_language}}</span>
-						<span class="vote">{{genre.vote_average}} <i class="fas fa-star"></i></span>
+						<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
 					</div>
 				</div>
 			</div>
