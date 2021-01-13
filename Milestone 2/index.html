@@ -32,7 +32,7 @@
 
 					<div class="search_utility d_flex">
 	
-						<form @submit.prevent="obtainMovieInfo(userResearch)">
+						<form @submit.prevent="obtainMovieInfo(genre,userResearch)">
 	
 							<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
 	
