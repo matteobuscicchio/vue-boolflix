@@ -61,7 +61,7 @@ let app = new Vue({
                     this.usefullInfo.splice(clearArray.lenght);
                     console.log(this.searchResults);
                 });
-                // 2)questo .forEach inserisce i nuovi dati nell'oggetto
+                // 2) questo .forEach inserisce i nuovi dati nell'oggetto
                 this.searchResults.forEach(resultTwo => {
                     let vote = Math.round(resultTwo.vote_average/2);
                     const fStar = [];
