@@ -84,7 +84,7 @@ let app = new Vue({
 
         obtainLanguage: function(o_l){
             // let language = `assets/img/en.jpeg`;
-            let language = `assets/img/flags/${o_l}.jpeg`;
+            let language = `assets/img/flags/${o_l}.png`;
             return language;
         },
     },
