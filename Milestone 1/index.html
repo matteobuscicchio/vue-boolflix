@@ -26,9 +26,15 @@
 				<div class="search_utility d_flex">
 
 					<i class="fas fa-search"></i>
-					<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch" v-on:keyup.enter="obtainMovieInfo(userResearch)">
 
-					<button class="search_button" @click="obtainMovieInfo(userResearch)">Cerca</button>
+					<form @submit.prevent="obtainMovieInfo(userResearch)">
+
+						
+						
+						<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
+
+						<button type="submit" class="search_button">Cerca</button>
+					</form>
 				</div>
 
 				<div class="movie_container container">
