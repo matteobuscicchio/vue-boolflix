@@ -69,8 +69,8 @@ form{
 	font-size: medium;
 }
 
-/* sezione: FILM */
-.movie_container {
+/* sezione: GENERE */
+.genre_container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,7 @@ form{
     padding: 100px 0;
 }
 
-.movie_card{
+.genre_card{
 	display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -90,16 +90,16 @@ form{
     background: darkgray;
     text-align: center;
 }
-.movie_card h3 {
+.genre_card h3 {
     margin: 20px 0;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
 }
-.movie_card span.language {
+.genre_card span.language {
     color: white;
     font-size: 20px;
 }
-.movie_card span.vote {
+.genre_card span.vote {
     color: white;
 }

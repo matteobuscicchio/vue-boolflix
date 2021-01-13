@@ -25,12 +25,16 @@ let app = new Vue({
         movie: 'movie',
         tv: 'tv',
         userResearch: '',
-        moviesInfo: [],
+        searchResults: [],
     },
 
     methods: {
 
-        movieOrTv: function(){
+        /**
+         * Questo metodo serve selezionare la ricerca tra film e serie tv.
+         * Questo è anche il primo elemento ad essere eseguito
+         */
+        genreSelector: function(){
             let oneOrtwo = document.getElementById('selettore').value;
             if (oneOrtwo == "film" ) {
                 this.genre = this.movie;
@@ -39,12 +43,16 @@ let app = new Vue({
             }
         },
 
-        obtainMovieInfo: function(type,find){
+        /**
+         * Questo metodo è stato rinominato poichè ora è in grado di trovare sia serie tv che film.
+         * (il suo nome precedente era: obtainMovieInfo)
+         */
+        obtainInfo: function(type,find){
             axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=5c002e8033723e03762798df6a4b2e57&language=it&query=${find}`)
 			.then(indexMovie =>{
                 const data = indexMovie.data.results;
-				this.moviesInfo = data;
-                console.log(this.moviesInfo);
+				this.searchResults = data;
+                console.log(this.searchResults);
             })
 		},
     },
@@ -57,6 +65,6 @@ let app = new Vue({
     mounted(){
 
         // this.obtainMovieInfo(userResearch);
-        this.movieOrTv();
+        this.genreSelector();
 	}
 })

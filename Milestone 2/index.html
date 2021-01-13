@@ -25,15 +25,15 @@
 
 				<div class="search_utility d_flex">
 
-					<select id="selettore" @change="movieOrTv() & obtainMovieInfo(genre,userResearch)">
-						
+					<select id="selettore" @change="genreSelector() & obtainInfo(genre,userResearch)">
+
 						<option value="film">Film</option>
 						<option value="tv">Tv</option>
 					</select>
 
 					<div class="search_utility d_flex">
 	
-						<form @submit.prevent="obtainMovieInfo(genre,userResearch)">
+						<form @submit.prevent="obtainInfo(genre,userResearch)">
 	
 							<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
 	
@@ -42,14 +42,14 @@
 					</div>
 				</div>
 
-				<div class="movie_container container">
+				<div class="genre_container container">
 
-					<div class="movie_card" v-for="movie in moviesInfo">
+					<div class="genre_card" v-for="genre in searchResults">
 
-						<h3 class="title">{{movie.title}}{{movie.name}}</h3>
-						<h3 class="original_title">{{movie.original_title}}{{movie.original_name}}</h3>
-						<span class="language">{{movie.original_language}}</span>
-						<span class="vote">{{movie.vote_average}}</span>
+						<h3 class="title">{{genre.title}}{{genre.name}}</h3>
+						<h3 class="original_title">{{genre.original_title}}{{genre.original_name}}</h3>
+						<span class="language">{{genre.original_language}}</span>
+						<span class="vote">{{genre.vote_average}}</span>
 					</div>
 				</div>
 			</div>
