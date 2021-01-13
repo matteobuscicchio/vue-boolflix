@@ -52,15 +52,16 @@ let app = new Vue({
             axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=5c002e8033723e03762798df6a4b2e57&language=it_IT&query=${find}`)
 			.then(result =>{
                 const data = result.data.results;
-				this.searchResults = data;
-                console.log(this.searchResults);
+                this.searchResults = data;
+                // console.log(this.searchResults);
 
                 // questa sezione serve a selezionare solo gli elementi che ci servono, nello specifico:
                 // 1) questo .forEach ripulisce l'oggetto
                 this.searchResults.forEach(clearArray => {
                     this.usefullInfo.splice(clearArray.lenght);
-                    console.log(this.searchResults);
                 });
+                // console.log(this.searchResults);
+
                 // 2) questo .forEach inserisce i nuovi dati nell'oggetto
                 this.searchResults.forEach(resultTwo => {
                     let vote = Math.round(resultTwo.vote_average/2);
@@ -78,7 +79,13 @@ let app = new Vue({
                         fullStar: fStar,
                     });
                 });
-            })
+            });
+        },
+
+        obtainLanguage: function(o_l){
+            // let language = `assets/img/en.jpeg`;
+            let language = `assets/img/flags/${o_l}.jpeg`;
+            return language;
         },
     },
 

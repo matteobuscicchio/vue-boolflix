@@ -100,6 +100,11 @@ form{
     color: white;
     font-size: 20px;
 }
+
+.language_img{
+	width: 20px;
+}
+
 .vote {
     color: white;
 }
