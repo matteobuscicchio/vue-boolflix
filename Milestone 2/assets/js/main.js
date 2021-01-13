@@ -26,6 +26,7 @@ let app = new Vue({
         tv: 'tv',
         userResearch: '',
         searchResults: [],
+        usefullInfo: [],
     },
 
     methods: {
@@ -48,18 +49,38 @@ let app = new Vue({
          * (il suo nome precedente era: obtainMovieInfo)
          */
         obtainInfo: function(type,find){
-            axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=5c002e8033723e03762798df6a4b2e57&language=it&query=${find}`)
-			.then(indexMovie =>{
-                const data = indexMovie.data.results;
+            axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=5c002e8033723e03762798df6a4b2e57&language=it_IT&query=${find}`)
+			.then(result =>{
+                const data = result.data.results;
 				this.searchResults = data;
                 console.log(this.searchResults);
+
+                // questa sezione serve a selezionare solo gli elementi che ci servono, nello specifico:
+                // 1) questo .forEach ripulisce l'oggetto
+                this.searchResults.forEach(clearArray => {
+                    this.usefullInfo.splice(clearArray.lenght);
+                    console.log(this.searchResults);
+                });
+                // questo .forEach inserisce i nuovi dati nell'oggetto
+                this.searchResults.forEach(resultTwo => {
+                    let vote = Math.round(resultTwo.vote_average/2);
+                    const fStar = [];
+                    for (var index = 0; index < vote; index++) {
+                        fStar.push('star');
+                    }
+                    this.usefullInfo.push({
+                        title: resultTwo.title,
+                        original_title: resultTwo.original_title,
+                        name: resultTwo.name,
+                        original_name: resultTwo.original_name,
+                        original_language: resultTwo.original_language,
+                        vote_average: Math.round(resultTwo.vote_average/2),
+                        fullStar: fStar,
+                    });
+                });
+                console.log(this.usefullInfo);
             })
-		},
-    },
-
-    computed: {
-
-
+        },
     },
 
     mounted(){

@@ -44,12 +44,12 @@
 
 				<div class="genre_container container">
 
-					<div class="genre_card" v-for="genre in searchResults">
+					<div class="genre_card" v-for="genre in usefullInfo">
 
 						<h3 class="title">{{genre.title}}{{genre.name}}</h3>
-						<h3 class="original_title">{{genre.original_title}}{{genre.original_name}}</h3>
+						<h3 class="original_title">{{genre.original_title}}{{genre.name}}</h3>
 						<span class="language">{{genre.original_language}}</span>
-						<span class="vote">{{genre.vote_average}}</span>
+						<span class="vote">{{genre.vote_average}} <i class="fas fa-star"></i></span>
 					</div>
 				</div>
 			</div>
