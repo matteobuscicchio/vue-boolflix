@@ -48,7 +48,6 @@
 
 						<h3 class="title">{{genre.title}}{{genre.name}}</h3>
 						<h3 class="original_title">{{genre.original_title}}{{genre.name}}</h3>
-						<span class="language">{{genre.original_language}}</span>
 						<img class="language_img" :src="obtainLanguage(genre.original_language)">
 						<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
 					</div>
