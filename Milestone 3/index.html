@@ -46,6 +46,8 @@
 
 					<div class="genre_card" v-for="genre in usefullInfo">
 
+						<img :src="obtainCover(genre.backdrop_path)" alt="Cover non disponibile">
+
 						<h3 class="title">{{genre.title}}</h3>
 						<h3 class="original_title">{{genre.original_title}}</h3>
 						<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">

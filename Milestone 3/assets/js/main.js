@@ -59,6 +59,7 @@ let app = new Vue({
                         original_language: resultTwo.original_language,
                         vote_average: Math.round(resultTwo.vote_average/2),
                         fullStar: fStar,
+                        backdrop_path: resultTwo.backdrop_path,
                         // richiesto nella milestone 4
                         overview: resultTwo.overview,
                     });
@@ -70,6 +71,10 @@ let app = new Vue({
             // let language = `assets/img/en.jpeg`;
             let language = `assets/img/flags/${o_l}.png`;
             return language;
+        },
+        obtainCover: function(img){
+            let coverImg = `https://image.tmdb.org/t/p/w342/${img}`;
+            return coverImg;
         },
     },
     mounted(){
