@@ -23,23 +23,37 @@
 
 			<div id="app">
 
-				<div class="header"></div>
+				<div class="header">
 
-				<div class="nav">
-
-					<div class="search_bar d_flex">
+					<div class="d_flex">
+						<img class="header_img" src="assets/img/boolflix.png" alt="">
 	
-						<div class="search_utility d_flex">
-							<select id="selettore" @change="genreSelector() & obtainInfo(genre,userResearch)">
-								<option value="film">Film</option>
-								<option value="tv">Tv</option>
-							</select>
-							
-							<!-- <form @submit.prevent="obtainInfo(genre,userResearch)"> -->
-							<form @keyup="obtainInfo(genre,userResearch)"><!-- usando questa  forma il bottone diventa inutile -->
-								<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
-								<!-- <button type="submit" class="search_button d_flex"> <i class="fas fa-search"></i> Cerca</button> -->
-							</form>
+						<div class="userAccout">
+							<h1>utente</h1>
+						</div>
+					</div>
+
+					<div class="nav_upper">
+
+						<div class="search_bar d_flex">
+		
+							<div class="search_utility d_flex">
+								<select id="selettore" @change="genreSelector() & languageSelector() & obtainInfo(genre,language,userResearch)">
+									<option value="film">Film</option>
+									<option value="tv">Tv</option>
+								</select>
+								
+								<!-- <form @submit.prevent="obtainInfo(genre,language,userResearch)"> -->
+								<form @keyup="obtainInfo(genre,language,userResearch)"><!-- usando questa  forma il bottone diventa inutile -->
+									<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
+									<!-- <button type="submit" class="search_button d_flex"> <i class="fas fa-search"></i> Cerca</button> -->
+								</form>
+
+								<select id="language"  @change="languageSelector()">
+									<option value="it_IT">Italiano</option>
+									<option value="en_EN">inglese</option>
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -23,6 +23,12 @@ body{
 }
 
 
+/* sezione: HEADER */
+.header_img{
+	text-align: center;
+}
+
+
 /* sezione: RICERCA */
 .search_bar{
 	background-color: white;
@@ -78,7 +84,12 @@ form{
 	font-size: medium;
 }
 
-/* sezione: GENERE */
+#lingua{
+	margin-left: 10px;
+	border: none;
+}
+
+/* sezione: MAIN */
 .genre_container {
     display: flex;
     justify-content: center;
