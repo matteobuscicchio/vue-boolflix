@@ -19,7 +19,6 @@ let app = new Vue({
         userResearch: '',
         searchResults: [],
         usefullInfo: [],
-        flags: ["it", "en", "de", "es", "fr"],
     },
     methods: {
 
