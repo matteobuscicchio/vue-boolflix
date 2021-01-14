@@ -113,15 +113,13 @@ form{
 
 
 /* sezione: MAIN */
-
-
 /* sezione: Card */
 .genre_container {
     display: flex;
     justify-content: center;
     align-items: center;
 	flex-wrap: wrap;
-	padding: 150px 0px 100px 0px;
+	padding: 150px 0px 130px 0px;
 }
 
 .genre_card{
