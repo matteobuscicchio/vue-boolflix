@@ -49,9 +49,10 @@
 						<img :src="obtainCover(genre.backdrop_path)" alt="Cover non disponibile">
 
 						<h3 class="title">{{genre.title}}</h3>
-						<h3 class="original_title">{{genre.original_title}}</h3>
+						<h3 class="original_title" v-if="genre.title != genre.original_title">{{genre.original_title}}</h3>
 						<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">
 						<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
+						<p>{{genre.overview}}</p>
 					</div>
 				</div>
 			</div>
