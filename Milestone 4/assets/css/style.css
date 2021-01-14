@@ -6,9 +6,10 @@
 }
 
 
-/* temporaneo: Body */
+/* sezione: BODY */
 body{
-	background-color: gray;
+	background-color: rgb(39, 39, 39);
+	color: white;
 }
 
 
@@ -24,11 +25,29 @@ body{
 
 
 /* sezione: HEADER */
-.header_img{
-	text-align: center;
+header{
+	background-color: black;
+	position: fixed;
+	top: 0px;
+	width: 100vw;
+}
+
+.upper_header{
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.userAccout{
+	justify-content: space-evenly;
+	align-items: center;
+}
+.userAccout i{
+	font-size: x-large;
+	margin-left: 5px;
 }
 
 
+/* sezione: NAV */
 /* sezione: RICERCA */
 .search_bar{
 	background-color: white;
@@ -77,25 +96,27 @@ form{
 	/* flex */
 	align-items: center;
 }
-.search_button>i{
-	margin-left: 5px;
-	margin-right: 5px;
+
+.search_icon{
+	margin-left: 10px;
 	color: #b1b1b1;
 	font-size: medium;
 }
 
-#lingua{
+#language{
 	margin-left: 10px;
+	margin-right: 10px;
 	border: none;
 }
 
+
 /* sezione: MAIN */
+/* sezione: Card */
 .genre_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 100px 0;
+	flex-wrap: wrap;
 }
 
 .genre_card{
@@ -123,7 +144,6 @@ form{
 	width: 342px;
 	height: 192px;
 	background-color: gray;
-	/* border-radius: 10px; */
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
@@ -134,4 +154,14 @@ form{
 
 .vote {
     color: white;
+}
+
+
+/* sezione: FOOTER */
+footer{
+	width: 100vw;
+	height: 100px;
+	background-color: black;
+	position: fixed;
+	bottom: 0px;
 }
