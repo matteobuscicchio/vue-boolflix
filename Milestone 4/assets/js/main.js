@@ -38,9 +38,9 @@ let app = new Vue({
         languageSelector: function(){
             let lang = document.getElementById('language').value;
             if (lang == "it_IT" ) {
-                this.genre = this.it_IT;
-            } else if (oneOrtwo == "en_EN" ){
-                this.genre = this.en_EN;
+                this.language = this.it_IT;
+            } else if (lang == "en_EN" ){
+                this.language = this.en_EN;
             }
         },
         /**
