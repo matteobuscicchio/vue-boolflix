@@ -17,6 +17,7 @@ body{
 .container{
 	max-width: 1170px;
 	margin: 0 auto;
+	align-items: center;
 }
 /* flex */
 .d_flex {
@@ -29,6 +30,7 @@ header{
 	background-color: black;
 	position: fixed;
 	top: 0px;
+	left: 0px;
 	width: 100vw;
 }
 
@@ -111,12 +113,18 @@ form{
 
 
 /* sezione: MAIN */
+
+
 /* sezione: Card */
 .genre_container {
     display: flex;
     justify-content: center;
     align-items: center;
 	flex-wrap: wrap;
+
+	padding: 150px 0px 100px 0px;
+	/* padding-top: 150px;
+	padding-bottom: 100px; */
 }
 
 .genre_card{
@@ -164,4 +172,5 @@ footer{
 	background-color: black;
 	position: fixed;
 	bottom: 0px;
+	left: 0px;
 }
