@@ -8,7 +8,7 @@
 
 /* temporaneo: Body */
 body{
-	background-color: purple;
+	background-color: gray;
 }
 
 
@@ -24,7 +24,16 @@ body{
 
 
 /* sezione: RICERCA */
+.search_bar{
+	background-color: white;
+	border-radius: 5px;
+	/* flex */
+	justify-content: space-evenly;
+	align-items: center;
+}
+
 #selettore{
+	margin-left: 10px;
 	border: none;
 }
 
@@ -45,7 +54,7 @@ form{
 	font-size: large;
 	padding: 10px;
 	border: white;
-	width: -webkit-fill-available;
+	width: 260px;
 }
 .search_input:focus{
 	outline: none;
@@ -84,17 +93,28 @@ form{
     align-items: center;
     flex-direction: column;
     flex-basis: 200px;
-    padding: 20px;
-    margin: 10px 20px;
-    height: 360px;
-    background: darkgray;
-    text-align: center;
+    padding: 10px;
+    margin: 10px;
+	height: 325px;
+	width: 362px;
+	background-color: rgb(84, 82, 82);
+	color: white;
+	text-align: center;
+	border-radius: 10px;
 }
-.genre_card h3 {
+.genre_card h3 p{
     margin: 20px 0;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
+}
+.cover_img{
+	width: 342px;
+	height: 192px;
+	background-color: gray;
+	/* border-radius: 10px; */
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .language_img{

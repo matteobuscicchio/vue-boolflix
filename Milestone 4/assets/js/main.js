@@ -71,7 +71,7 @@ let app = new Vue({
             return language;
         },
         obtainCover: function(img){
-            let coverImg = `https://image.tmdb.org/t/p/w342/${img}`;
+            let coverImg = `https://image.tmdb.org/t/p/w780/${img}`;
             return coverImg;
         },
     },

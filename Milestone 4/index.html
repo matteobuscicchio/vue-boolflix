@@ -23,36 +23,40 @@
 
 			<div id="app">
 
-				<div class="search_utility d_flex">
+				<div class="header"></div>
 
-					<select id="selettore" @change="genreSelector() & obtainInfo(genre,userResearch)">
+				<div class="nav">
 
-						<option value="film">Film</option>
-						<option value="tv">Tv</option>
-					</select>
-
-					<div class="search_utility d_flex">
+					<div class="search_bar d_flex">
 	
-						<form @submit.prevent="obtainInfo(genre,userResearch)">
-	
-							<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
-	
-							<button type="submit" class="search_button d_flex"> <i class="fas fa-search"></i> Cerca</button>
-						</form>
+						<div class="search_utility d_flex">
+							<select id="selettore" @change="genreSelector() & obtainInfo(genre,userResearch)">
+								<option value="film">Film</option>
+								<option value="tv">Tv</option>
+							</select>
+							
+							<form @submit.prevent="obtainInfo(genre,userResearch)">
+								<input class="search_input" placeholder="Cerca i tuoi contenuti preferiti" type="text" v-model="userResearch">
+								<button type="submit" class="search_button d_flex"> <i class="fas fa-search"></i> Cerca</button>
+							</form>
+						</div>
 					</div>
 				</div>
 
-				<div class="genre_container container">
+				<div class="main">
 
-					<div class="genre_card" v-for="genre in usefullInfo">
+					<div class="genre_container container">
 
-						<img :src="obtainCover(genre.backdrop_path)" alt="Cover non disponibile">
-
-						<h3 class="title">{{genre.title}}</h3>
-						<h3 class="original_title" v-if="genre.title != genre.original_title">{{genre.original_title}}</h3>
-						<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">
-						<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
-						<p>{{genre.overview}}</p>
+						<div class="genre_card" v-for="genre in usefullInfo">
+	
+							<img class="cover_img" :src="obtainCover(genre.backdrop_path)" alt="Cover non disponibile">
+	
+							<h3 class="title">{{genre.title}}</h3>
+							<h3 class="original_title" v-if="genre.title != genre.original_title">{{genre.original_title}}</h3>
+							<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
+							<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">
+							<!-- <p>{{genre.overview}}</p> -->
+						</div>
 					</div>
 				</div>
 			</div>
