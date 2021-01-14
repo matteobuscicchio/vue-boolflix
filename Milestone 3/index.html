@@ -46,9 +46,9 @@
 
 					<div class="genre_card" v-for="genre in usefullInfo">
 
-						<h3 class="title">{{genre.title}}{{genre.name}}</h3>
-						<h3 class="original_title">{{genre.original_title}}{{genre.name}}</h3>
-						<img class="language_img" :src="obtainLanguage(genre.original_language)">
+						<h3 class="title">{{genre.title}}</h3>
+						<h3 class="original_title">{{genre.original_title}}</h3>
+						<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">
 						<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
 					</div>
 				</div>

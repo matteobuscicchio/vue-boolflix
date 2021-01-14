@@ -10,19 +10,17 @@
 // Esempio di URL:
 // https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
 
-
 let app = new Vue({
     el: '#app',
     data: {
-
         genre: '',
         movie: 'movie',
         tv: 'tv',
         userResearch: '',
         searchResults: [],
         usefullInfo: [],
+        flags: ["it", "en", "de", "es", "fr"],
     },
-
     methods: {
 
         /**
@@ -46,43 +44,35 @@ let app = new Vue({
             axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=5c002e8033723e03762798df6a4b2e57&language=it_IT&query=${find}`)
 			.then(result =>{
                 const data = result.data.results;
+                const temp = [];
                 this.searchResults = data;
-                // console.log(this.searchResults);
-
-                // questa sezione serve a selezionare solo gli elementi che ci servono, nello specifico:
-                // 1) questo .forEach ripulisce l'oggetto
-                this.searchResults.forEach(clearArray => {
-                    this.usefullInfo.splice(clearArray.lenght);
-                });
-                // console.log(this.searchResults);
-
-                // 2) questo .forEach inserisce i nuovi dati nell'oggetto
+                // questa sezione serve a lavorare gli elementi che ci servono
                 this.searchResults.forEach(resultTwo => {
                     let vote = Math.round(resultTwo.vote_average/2);
                     const fStar = [];
                     for (var index = 0; index < vote; index++) {
                         fStar.push('star');
                     }
-                    this.usefullInfo.push({
-                        title: resultTwo.title,
-                        original_title: resultTwo.original_title,
-                        name: resultTwo.name,
-                        original_name: resultTwo.original_name,
+                    // ora tuttle le info lavorate vengono inserrite nell'oggetto che poi verranno mostrate nel html
+                    temp.push({
+                        title: resultTwo.title || resultTwo.name,
+                        original_title: resultTwo.original_title || resultTwo.original_name,
                         original_language: resultTwo.original_language,
                         vote_average: Math.round(resultTwo.vote_average/2),
                         fullStar: fStar,
+                        // richiesto nella milestone 4
+                        overview: resultTwo.overview,
                     });
+                    this.usefullInfo = temp;
                 });
             });
         },
-
         obtainLanguage: function(o_l){
             // let language = `assets/img/en.jpeg`;
             let language = `assets/img/flags/${o_l}.png`;
             return language;
         },
     },
-
     mounted(){
 
         // this.obtainMovieInfo(userResearch);
