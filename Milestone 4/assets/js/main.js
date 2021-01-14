@@ -24,7 +24,7 @@ let app = new Vue({
     methods: {
 
         /**
-         * Questo metodo serve selezionare la ricerca tra film e serie tv.
+         * Questo metodo serve per selezionare la ricerca tra film e serie tv.
          * Questo è anche il primo elemento ad essere eseguito
          */
         genreSelector: function(){
@@ -35,6 +35,9 @@ let app = new Vue({
                 this.genre = this.tv;
             }
         },
+        /**
+         * Questo metodo serve per selezionare la lingua.
+         */
         languageSelector: function(){
             let lang = document.getElementById('language').value;
             if (lang == "it_IT" ) {
