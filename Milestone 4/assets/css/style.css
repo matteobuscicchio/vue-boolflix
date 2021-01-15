@@ -19,6 +19,10 @@ body{
 	margin: 0 auto;
 	align-items: center;
 }
+
+strong{
+	color: red;
+}
 /* flex */
 .d_flex {
 	display: flex;
@@ -119,7 +123,10 @@ form{
     justify-content: center;
     align-items: center;
 	flex-wrap: wrap;
-	padding: 150px 0px 130px 0px;
+	position: fixed;
+	top: 130px;
+	bottom: 100px;
+	overflow-y: auto;
 }
 
 .genre_card{
@@ -130,7 +137,7 @@ form{
     flex-basis: 200px;
     padding: 10px;
     margin: 10px;
-	height: 325px;
+	height: 450px;
 	width: 362px;
 	background-color: rgb(84, 82, 82);
 	color: white;
@@ -143,22 +150,51 @@ form{
     font-size: 18px;
     text-transform: uppercase;
 }
-.cover_img{
-	width: 342px;
-	height: 192px;
+
+.visibility_overwiew{
+	height: 300px;
+	width: 180px;
 	background-color: gray;
+	background-size: cover;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	contain: content;
 }
 
-.language_img{
-	width: 20px;
+.overview{
+	visibility: hidden;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	padding-right: 17px;
+    box-sizing: content-box;
+	overflow-y: auto;
+	text-align: center;
+}
+.visibility_overwiew:hover .overview{
+	visibility: visible;
+	background-color: rgba(0, 0, 0, 1);
+	height: 100%;
+	width: 100%;
+}
+
+.title{
+	padding-top: 2px;
+}
+
+.original_title{
+	padding-top: 2px;
 }
 
 .vote {
+	padding-top: 2px;
     color: white;
 }
 
+.language_img{
+	padding-top: 2px;
+	width: 20px;
+}
 
 /* sezione: FOOTER */
 footer{

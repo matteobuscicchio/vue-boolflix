@@ -69,14 +69,18 @@
 					<div class="genre_container">
 
 						<div class="genre_card" v-for="genre in usefullInfo">
-	
-							<img class="cover_img" :src="obtainCover(genre.backdrop_path)" alt="Cover non disponibile">
-	
-							<h3 class="title">{{genre.title}}</h3>
-							<h3 class="original_title" v-if="genre.title != genre.original_title">{{genre.original_title}}</h3>
-							<span class="vote"> <i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
-							<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">
-							<!-- <p>{{genre.overview}}</p> -->
+
+							<div class="visibility_overwiew" :style="{backgroundImage:`url(${obtainCover(genre.poster_path)})`}">
+								<p class="overview"><strong>Descrizione: </strong> {{genre.overview}}</p>
+							</div>
+
+							<h3 class="title"><strong>TITOLO: </strong> <br> {{genre.title}}</h3>
+							<h3 class="original_title" v-if="genre.title != genre.original_title"><strong>TITOLO ORIGINALE: </strong> <br> {{genre.original_title}}</h3>
+							<span class="vote"> <strong>VOTO: </strong><i class="fas fa-star vote" v-for="star in genre.fullStar"></i> {{genre.vote_average}}/5 </span>
+							<span>
+								<strong>LINGUA: </strong>
+								<img class="language_img" :alt="(genre.original_language)" :src="obtainLanguage(genre.original_language)">
+							</span>
 						</div>
 					</div>
 				</main>

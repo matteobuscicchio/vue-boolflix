@@ -22,7 +22,6 @@ let app = new Vue({
         usefullInfo: [],
     },
     methods: {
-
         /**
          * Questo metodo serve per selezionare la ricerca tra film e serie tv.
          * Questo è anche il primo elemento ad essere eseguito
@@ -70,8 +69,7 @@ let app = new Vue({
                         original_language: resultTwo.original_language,
                         vote_average: Math.round(resultTwo.vote_average/2),
                         fullStar: fStar,
-                        backdrop_path: resultTwo.backdrop_path,
-                        // richiesto nella milestone 4
+                        poster_path: resultTwo.poster_path,
                         overview: resultTwo.overview,
                     });
                     this.usefullInfo = temp;
@@ -79,18 +77,19 @@ let app = new Vue({
             });
         },
         obtainLanguage: function(o_l){
-            // let language = `assets/img/en.jpeg`;
             let language = `assets/img/flags/${o_l}.png`;
             return language;
         },
         obtainCover: function(img){
-            let coverImg = `https://image.tmdb.org/t/p/w780/${img}`;
-            return coverImg;
+            let coverImg = '';
+            if (img !== null) {
+                return coverImg = `https://image.tmdb.org/t/p/w780/${img}`;
+            } else {
+                return coverImg = `assets/img/error.jpg`;
+            }
         },
     },
     mounted(){
-
-        // this.obtainMovieInfo(userResearch);
         this.genreSelector();
         this.languageSelector();
 	}
